@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Svg - Animação </title>
+
+
+    <style>
+        body{
+            background: url(http://cdn.desktopwallpapers4.me/wallpapers/vector/1920x1080/3/30147-firewatch-1920x1080-vector-wallpaper.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .flex{
+            display: flex;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            align-items: center;
+        }
+        .container{
+            width: 60px;
+            visibility:hidden;
+        }
+        input{
+            border: none;
+            border-radius: 30px;
+            padding: 1.3em;
+            outline: none;  
+            width: 500px;
+        }
+        input:hover ~ .container{
+            animation: animate 3.9s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            animation-iteration-count: infinite;
+            visibility: visible;
+        }
+        path,
+        line{
+            stroke-dasharray: 1800;
+            opacity: 10;
+        }
+
+        @keyframes animate{
+           0%{
+               stroke-dashoffset: 1800;
+               opacity: 0;
+           }
+           30%{
+               stroke-dashoffset: 1800;
+               opacity: 10;
+           }
+           100%{
+               stroke-dashoffset: 0;
+               opacity: 0;
+           }
+        }
+
+    </style>
+
+</head>
+<body>
+  
+    <div class="flex">
+        <input type="text" placeholder="Hover-me !">
+        <div class="container">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 117.6 118.5" style="enable-background:new 0 0 117.6 118.5;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;stroke:#FFFFFF;stroke-width:8;stroke-miterlimit:10;}
+            </style>
+                <path class="st0" d="M52.1,92.1c-22.4,0-40.5-18.1-40.5-40.5s18.1-40.5,40.5-40.5"/>
+                <g>
+                    <line class="st0" x1="79.1" y1="81.6" x2="108.1" y2="114.6"/>
+                </g>
+                <path class="st0" d="M51.6,92.1C74,92.1,92.1,74,92.1,51.6S74,11.1,51.6,11.1"/>
+            </svg>
+        </div>
+
+   
+</div>
+</body>
+</html>
